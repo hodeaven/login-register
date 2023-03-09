@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <div id="modal-success" style="display:none;">
+        <h2>Usuário cadastrado com sucesso!</h2>
+        <button id="btn-close-modal">Fechar</button>
+        
+        </div>
+
+        <form id="register-form">
+            <main class="text-card"> 
+                <h2>Cadastrar</h2>
+            <input type="hidden" name="action" value="register">
+            <label>
+                
+                <input type="text"  name="username" placeholder="Nome de usuário"required>
+            </label>
+            <br>
+            <label>
+                <br>
+                <input type="email" name="email" placeholder="E-mail" required>
+            </label>
+            <br>
+            <label>
+                <br>
+                <input type="password" name="password" placeholder="Senha"required>
+            </label>
+            <br>
+            <button type="submit">Cadastrar</button>
+        </form>  
+            
+            
+    <script>
+        $(document).ready(function() {
+            $('#register-form').submit(function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: 'http://localhost/api/index.php',
+                    method: 'POST',
+                    data: $('#register-form').serialize(),
+                    success: function(response) {
+                        $('#modal-success').show();
+                        $('#register-form')[0].reset();
+                    }
+                });
+            });
+
+            $('#btn-close-modal').click(function() {
+                $('#modal-success').hide();
+                window.location.href="file:///C:/xampp/htdocs/api/login.html"
+            });
+        })
+    </script>
+</body>
+</html>

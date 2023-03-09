@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div id="modal-success" style="display:none;">
+        <h2>Usuário autenticado com sucesso!</h2>
+        <button id="btn-close-modal">Fechar</button>
+    </div>
+    
+    <form id="login-form">
+        <main class="text-card">
+            <h2>Entrar</h2>
+        </main>
+        <input type="hidden" name="action" value="login">
+        <label>
+        
+            <input type="email" name="email" placeholder="E-mail" required>
+        </label><div class="underline"></div>
+        <br>
+        <label>
+            <br>
+            <input type="password" name="password" placeholder="Senha" required>
+        </label>
+        <br>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#login-form').submit(function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: 'http://localhost/api/index.php',
+                    method: 'POST',
+                    data: $('#login-form').serialize(),
+                    success: function(response) {
+                        $('#modal-success').show();
+                        $('#login-form')[0].reset();
+                    }
+                });
+            });
+
+            $('#btn-close-modal').click(function() {
+                $('#modal-success').hide();
+                window.location.href="file:///C:/xampp/htdocs/api/logado.html"
+            });
+        });
+    </script>
+</body>
+</html>

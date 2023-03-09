@@ -1,0 +1,115 @@
+@import url('https://fonts.google.com/specimen/Poppins?query=popp');
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: rgb(89,128,232);
+    background: linear-gradient(90deg, rgba(89,128,232,0.8827906162464986) 0%, rgba(233,37,186,0.9528186274509804) 50%, rgba(51,0,255,0.7091211484593838) 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#login-form {
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    max-width: 350px;
+    min-height: 30vh;
+    padding: 2rem;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#register-form{
+    background-color: white;
+    max-width: 400px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+    
+.card-content-area input {
+
+    margin-top: 10px;
+    padding:0 5px;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #e1e1e1;
+    outline: none;
+    color: deeppink;
+
+}
+
+#modal-success{
+    display: flex;
+    position: absolute;
+    color: #fff;
+    margin-top: -35%;
+    margin-left: 105px;
+    font-size: 50%;
+    
+}
+
+h1{ 
+    margin-top: 18%;
+    margin-left: 110px;
+    display: inline;
+    position: absolute;
+    text-align: center;
+    
+}
+input {
+    content: '';
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: #fff;
+    
+}
+
+form button[type='submit']{
+    margin-top: 2rem;
+    padding: 0.4rem;
+    background-color: deeppink;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3 ease;
+
+}
+
+form button[type='submit']:hover{
+    letter-spacing: 0.3px;
+        
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome{
+    font-style: oblique;
+    color: #fff;
+}
+
+main h2{
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
